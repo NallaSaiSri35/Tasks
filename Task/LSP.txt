@@ -1,0 +1,49 @@
+public class Rectangle {
+
+    private int length;
+    private int breadth;
+
+    public int getLength() {
+        return length;
+    }
+    public void setLength(int length) {
+        this.length = length;
+    }
+    public int getBreadth() {
+        return breadth;
+    }
+    public void setBreadth(int breadth) {
+        this.breadth = breadth;
+    }
+    public int getArea() {
+        return this.length * this.breadth;
+    }
+}
+
+public class Square extends Rectangle {
+
+    @Override
+    public void setBreadth(int breadth) {
+        super.setBreadth(breadth);
+        super.setLength(breadth);
+    }
+    @Override
+    public void setLength(int length) {
+        super.setLength(length);
+        super.setBreadth(length);
+    }
+}
+
+public class LSPEx {
+public void calculateArea(Rectangle r) {
+        r.setBreadth(2);
+        r.setLength(3);
+         }
+
+
+    public static void main(String[] args) {
+        LSPEx lsp = new LSPEx();
+        lsp.calculateArea(new Rectangle());
+        lsp.calculateArea(new Square());
+    }
+}

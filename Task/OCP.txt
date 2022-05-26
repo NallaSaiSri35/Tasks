@@ -1,0 +1,36 @@
+VehicleInf.java
+
+public class VehicleInf 
+{  
+public double vehicleNumber(Vehicle vcl)   
+{  
+if (vcl instanceof Car)   
+{  
+return vcl.getNumber();  
+if (vcl instanceof Bike)   
+{  
+return vcl.getNumber();  
+}  
+}  
+
+VehicleInf.java
+
+public class VehicleInf   
+{  
+public double vehicleNumber()   
+{  
+//logic  
+}  
+}  
+public class Car extends VehicleInfo   
+{  
+public double vehicleNumber()   
+{  
+return this.getValue();  
+}  
+public class Car extends Truck   
+{  
+public double vehicleNumber()   
+{  
+return this.getValue();  
+}  

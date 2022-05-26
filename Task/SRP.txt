@@ -1,0 +1,47 @@
+Student.java
+
+public class Student  
+{  
+public void printDetails();  
+{  
+//functionality 
+}  
+pubic void calculatePercentage();  
+{  
+//functionality  
+}  
+public void addStudent();  
+{  
+//functionality 
+}  
+}  
+
+Student.java
+
+public class Student  
+{  
+public void addStudent();  
+{  
+//functionality  
+}  
+}  
+
+PrintStudentDetails.java
+
+public class PrintStudentDetails  
+{  
+public void printDetails();  
+{  
+//functionality 
+}  
+}  
+
+Percentage.java
+
+public class Percentage  
+{  
+public void calculatePercentage();  
+{  
+//functionality  
+}  
+}  

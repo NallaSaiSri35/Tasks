@@ -1,0 +1,75 @@
+OperationsPerformed.java
+
+ 
+public interface OperationsPerformed {
+	public void view();
+	public void edit();
+}
+
+RealOperationsPerformed.java
+
+
+public class RealOperationsPerformed implements OperationsPerformed {
+	@Override
+	public void view() {
+		System.out.println("Performing view operation.");
+	}
+ 
+	@Override
+	public void edit() {
+		System.out.println("Performing edit operation.");
+	}
+}
+
+
+ProxyOperationsPerformed.java
+
+
+ 
+public class ProxyOperationsPerformed implements OperationsPerformed {
+	private String user;
+	private RealOperationsPerformed  rp;
+ 
+	public ProxyOperationsPerformed(String user){
+		this.user = user;
+	}
+ 
+	@Override
+	public void view() {
+	  if (getRole(user).equals("ADMIN") || 
+				getRole(user).equals("USER")) {  
+			rp = new RealOperationsPerformed();  
+			rp.view();  
+          }   
+          else {  
+            System.out.println("You cannot view this record.");  
+          }   
+	}
+ 
+	@Override
+	public void edit() {
+		if (getRole(user).equals("ADMIN")) {  
+			rp = new RealOperationsPerformed();  
+			rp.edit();  
+                }   
+                else {  
+                     System.out.println("You cannot edit this record.");  
+                }  
+	}
+ 
+	public String getRole(String user) {  
+            return "ADMIN";  
+        }  
+}
+
+
+ProxyPatternTest.java
+
+
+public class ProxyPatternTest {
+	public static void main(String args[]){
+		OperationsPerformed op = new ProxyOperationsPerformed("XYZ");  
+		op.view();
+		op.edit();
+	}
+}
